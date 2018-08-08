@@ -8,8 +8,8 @@
 
 MAINFILE=thesis
 
-LATEX=/Library/TeX/texbin/latex -interaction=batchmode -file-line-error-style
-PDFLATEX=/Library/TeX/texbin/pdflatex -interaction=batchmode
+LATEX=latex -interaction=batchmode -file-line-error-style
+PDFLATEX=pdflatex -interaction=batchmode
 ECHO=/bin/echo -E
 
 
