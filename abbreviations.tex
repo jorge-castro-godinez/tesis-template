@@ -1,0 +1,52 @@
+%% ---------------------------------------------------------------------------
+%% paNotation.tex
+%%
+%% Notation
+%%
+%% $Id: paNotation.tex,v 1.15 2004/03/30 05:55:59 alvarado Exp $
+%% ---------------------------------------------------------------------------
+
+\cleardoublepage
+\renewcommand{\nomname}{Abbreviations}
+\markboth{\nomname}{\nomname}
+\renewcommand{\nompreamble}{\addcontentsline{toc}{chapter}{\nomname}%
+\setlength{\nomitemsep}{-\parsep}
+\setlength{\itemsep}{10ex}
+}
+
+\newcommand{\syma}[3][foo]{%
+	\ifthenelse{\equal{#1}{foo}}%
+	{\nomenclature[A#2\ ]{#2}{#3}}{\nomenclature[A#1\ ]{#2}{#3}}}
+
+%%
+% Abbreviations
+%%
+\syma{\sf DSP}{Digital Signal Processing}
+\syma{\sf GPP}{General Purpose Processor}
+\syma{\sf EBL}{Embedded Logic Blocks}
+\syma{\sf HDL}{Hardware Description Language}
+\syma{\sf IP}{Intellectual Property}
+\syma{\sf DMA}{Direct Memory Access}
+\syma{\sf CPU}{Central Processing Unit}
+\syma{\sf FIFO}{First In First Out}
+\syma{\sf FPGA}{Field Programmable Gate Array}
+\syma{\sf DRAM}{Dynamic Random Access Memory}
+\syma{\sf GPU}{Graphical Processing Unit}
+\syma{\sf SoC}{System on Chip}
+\syma{\sf SRAM}{Static Random Access Memory}
+\syma{\sf FSM}{Finite State Machine}
+\syma{\sf HAL}{Hardware Abstraction Layer}
+\syma{\sf BSP}{Binary Space Partitioning}
+\syma{\sf IDE}{Mean Error Distance}
+\syma{\sf MED}{Integrated Development Environment}
+\syma{\sf ER}{Error Rate}
+\syma{\sf PSNR}{Peak Signal to Noise Ratio}
+\syma{\sf SSIM}{Structural Similarity Method}
+\syma{\sf SD}{Secure Digital}
+
+\printnomenclature[20mm]
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "paMain"
+%%% End:

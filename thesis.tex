@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author:  Pablo Alvarado
+% Modifications / Adaptation: Jorge Castro-Godínez 
+%
+% Escuela de Ingeniería Electrónica
+% Instituto Tecnológico de Costa Rica
+%
+% Tesis Template
+% 
+% Phone:   +506 550 2106
+% Fax:     +506 591 6629
+% email:   palvarado@ietec.org
+%
+% $Id: main.tex 1513 2010-08-15 01:25:24Z palvarado $
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass is book
+\documentclass[12pt,twoside]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage{ifthen}                     % provide if-then-else operators
+
+% --------------------------------------------------------------------------
+% Global variables required in document formatting
+% --------------------------------------------------------------------------
+%
+% BOOK MODE
+%
+\newboolean{bookmode}                   % boolean used to control book format
+% Ensure that only one of the next two lines is active:
+\setboolean{bookmode}{true}             % turn book mode on
+%\setboolean{bookmode}{false}           % turn book mode off
+
+%
+% DRAFT MODE
+%
+\newboolean{draftmode}                  % boolean used to control draft-mode
+% Ensure that only one of the next two lines is active:
+%\setboolean{draftmode}{true}            % turn draft mode on
+\setboolean{draftmode}{false}           % turn draft mode off
+% --------------------------------------------------------------------------
+%
+% GENERAL AUTHOR, TITLE AND KEYWORDS
+%
+% Student's name
+\newcommand{\scriptAuthor}{Pablo Felipe Osorio Mar\'in}
+
+% Title of the work
+\newcommand{\scriptTitle}{Development of a multi-core and multi-accelerator
+platform for approximate computing} 
+
+% Type of the work
+\newcommand{\scriptType}{Proyecto de Graduación}
+%\newcommand{\scriptType}{Masterarbeit}
+%\newcommand{\scriptType}{Bachelorarbeit} 
+
+\newcommand{\fechaDefensa}{30 de noviembre de 2017}
+
+
+% Para el PDF (cambiar si se desea otras cosas a lo indicado arriba
+\newcommand{\pdfAuthor}{\scriptAuthor}
+\newcommand{\pdfTitle}{\scriptTitle} 
+\newcommand{\pdfKeywords}{\scriptKeywords}
+
+% --------------------------------------------------------------------------
+
+% include all packages and define all required general macros
+\input{macros}
+
+% allow equations to be splitted (breaked) into several pages
+\allowdisplaybreaks[3]
+
+% Creative Commons
+\usepackage[
+type={CC},
+modifier={by-nc-sa},
+version={4.0},
+]{doclicense}
+
+% --------------------------------------------------------------------------
+\begin{document}
+  % where to look for graphics
+  \graphicspath{{./}{./fig/}}
+
+  \pagenumbering{alph}
+	
+  \pagestyle{empty}
+  \include{titlepage_es}
+  \include{disclaimer_es}
+  \include{tribunal}
+  %\include{acta} 
+  \include{dedicatoria}
+  \include{agradecimientos}
+
+  \include{abstract}
+ 
+
+  %----------------------------------------------------------------------------
+  \frontmatter
+  %----------------------------------------------------------------------------
+  \pagestyle{fancy}
+
+  \parskip0ex                            % space between paragraphs
+
+  \tableofcontents
+  \listoffigures
+  \listoftables
+
+\ifdraft{%
+  % todo's                               % TODOs
+  \listoftodo
+}{%
+}
+
+  \include{abbreviations}                % Abbreviation
+
+  \parskip1.3ex                          % space between paragraphs
+
+  %----------------------------------------------------------------------------
+  \mainmatter
+  %----------------------------------------------------------------------------
+  % where to look for graphics
+  \graphicspath{{./}{./fig/}}
+
+  % Main files
+  \include{introduction}
+  \include{related_work}
+  \include{model}
+  \include{interfaces}
+  \include{multicore}
+  \include{conclusions}
+
+  %----------------------------------------------------------------------------
+  % literature
+  %\bibliographystyle{alpha} % for english documents
+  \bibliographystyle{sty/plainurl} 
+  \bibliography{references}
+  %----------------------------------------------------------------------------
+
+  %----------------------------------------------------------------------------
+  %\appendix
+  %----------------------------------------------------------------------------
+
+  %\include{appendix}
+
+  %----------------------------------------------------------------------------
+  \backmatter
+  %----------------------------------------------------------------------------
+
+  %\printindex                % insert index into document. Don't forget to call
+                             % "makeindex filename" first.
+\end{document}

@@ -1,0 +1,16 @@
+\chapter{A Multicore and Multi-Accelerator Platform}
+\label{ch:multicore}
+
+\section{Multi-Core Design}
+
+Once the interface design between a computing core and an accelerator is 
+completed and results are gathered, one can proceed with the final integration, 
+involving the fulfillment of the multi-core implementation.
+This multi-core architecture aims to facilitate a way, in which the accelerator
+functions independent of each core, and also present a form of interaction that
+allows a master processor to send messages to each slave, which can use any of 
+the available accelerators. To achieve this goal,
+first it is analyzed the memory partitioning requirements for every processor,
+to run on a single block, and the specific components selection that, at the
+end, would help the accessing of accelerator interface and processor
+addressing.
